@@ -13,5 +13,5 @@ $message = trim($_POST['msg'] ?? null);
 $name = trim($_POST['name'] ?? null);
 if(!empty($name) && !empty($message)) {
 	add_msg($name, $message);
-	}
+}
 header('Location: /index.php');
