@@ -22,6 +22,7 @@
 					<div class="message">
 						<div class="login"><?php echo $chat['name'];?></div>
 						<div class="text"><?php echo $chat['message'];?></div>
+						<div class="date"><?php echo $chat['date'];?></div>
 					</div>
 				<?php
 					}
