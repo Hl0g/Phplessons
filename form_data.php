@@ -4,12 +4,12 @@ function add_msg($filename, $name, $message){
 		$message = [
 			'name' => $name,
 			'message' => $message,
-			'date' => date("y.m.d. H:i:s.")
+			'date' => date("d.m.Y H:i:s.")
 		];
 		fwrite($file, json_encode($message) . PHP_EOL); 
 		fclose($file);		
 }
-$filename = ('chat.txt');
+$filename = 'chat.txt';
 $message = trim($_POST['msg'] ?? null);
 $name = trim($_POST['name'] ?? null);
 if(!empty($name) && !empty($message)) {
