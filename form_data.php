@@ -1,5 +1,5 @@
 <?php
-function add_msg($filename = 'chat.txt', $name, $message){
+function add_msg($filename, $name, $message){
 	$file = fopen($filename, 'a');
 		$message = [
 			'name' => $name,
@@ -9,6 +9,7 @@ function add_msg($filename = 'chat.txt', $name, $message){
 		fwrite($file, json_encode($message) . PHP_EOL); 
 		fclose($file);		
 }
+$filename = ('chat.txt');
 $message = trim($_POST['msg'] ?? null);
 $name = trim($_POST['name'] ?? null);
 if(!empty($name) && !empty($message)) {
