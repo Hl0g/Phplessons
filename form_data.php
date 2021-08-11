@@ -1,5 +1,5 @@
 <?php
-require_once "./Function.php";
+require_once "./Functions.php";
 $filename = 'chat.txt.';
 $name = trim($_POST['name'] ?? null);
 $message = trim($_POST['msg'] ?? null);
