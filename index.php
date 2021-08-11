@@ -15,6 +15,7 @@
 			 Chat
 			 <div>
 				<?php
+					$include;
 					$file = fopen('chat.txt', 'r');
 					while($chatline = fgets($file)) {
 						$chat = json_decode($chatline, true);
