@@ -14,8 +14,7 @@
 			 <div><input type="submit" name="knpopka"></div>
 			 Chat
 			 <div>
-				<?php
-					$include;
+				<?php			
 					$file = fopen('chat.txt', 'r');
 					while($chatline = fgets($file)) {
 						$chat = json_decode($chatline, true);
