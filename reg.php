@@ -7,11 +7,10 @@ $password = trim($_POST['pwd'] ?? null);
 if(!empty($name) && !empty($password) && !empty($login)){
 		$path = './users/';
 		if (file_exists($path.'user_'.$login)){
-			print_r ('error');
-			
+		print_r ('error');			
 		}
-		else {
-			mkdir($path, 0777);
+	else {
+		mkdir($path, 0777);
 		add_user($name, $login, $password, $path);	
 		header('Location: /index.php');
 		}
