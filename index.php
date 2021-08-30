@@ -1,4 +1,8 @@
 <html>
+	<?php
+	ob_start();
+	require_once __DIR__ . '/functions.php';
+	?>
 	<head>
 		<meta charset="utf-u8">
 	</head>
@@ -6,27 +10,41 @@
 			Otpravka Form
 		</title>
 			<body>
-			<form action="./form_data.php" enctype="multipart/form-data" method="post">
-			 Login
-			 <input name="name" type="text" maxlength="40" size="45" Value="Name">
-			 <div>Инфо</div>
-			 <div><textarea name="msg"></textarea></div>
-			 <div><input type="submit" name="knpopka"></div>
-			 Chat
-			 <div>
-				<?php			
-					$file = fopen('chat.txt', 'r');
+			 <?php
+					
+				$file = fopen('chat.txt', 'r');
 					while($chatline = fgets($file)) {
 						$chat = json_decode($chatline, true);
-				?>
-					<div class="message">
-						<div class="login"><?php echo $chat['name'];?></div>
-						<div class="text"><?php echo $chat['message'];?></div>
-						<div class="date"><?php echo $chat['date'];?></div>
-					</div>
-				<?php
 					}
 					fclose($file);
-				?>
-			 </div>		 
+					$token='';
+				if (isset($_COOKIE["token"])){
+					$token=$_COOKIE["token"];
+					};
+					if (checktoken($token)){
+						?>
+				<form action='./logout.php' enctype='multipart/form-data' method='post' >
+					<textarea></textarea>
+					<button type='submit'>Logout</button>
+				</form>	
+			<?php 
+					}
+					else {
+			?>
+			<form action="./auth.php" enctype="multipart/form-data" method="post">
+			<div>
+				 Login
+			</div>
+				 <input name="login" type="text" maxlength="40" size="45" placeholder="Name">
+			 <div>Password</div>
+			 <input type="password" name="password">
+			 <div><input type="submit" name="knpopka"></div>
+		     <div> create a free account - <a href="./register.php"> registration</div>
+			 <div>
+			 </div>	
+			<?php 
+			};
+			ob_end_flush();
+			exit;
+			?>	 	 
 </html>
