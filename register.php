@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<meta charset="utf-u8">
+		<meta charset="utf-8">
 	</head>
 		<title>
 			Otpravka Form
@@ -16,7 +16,7 @@
 			<div>Confirm your Password</div>
 			<input type="password" name="password_confirm" placeholder="Confirm your password">
 			<button type="submit">ENTER</button>
-			<div> have an account - <a href="./">authorisation</a></div>
+			<div> have an account - <a href="/">authorisation</a></div>
 		</form>
 	</body>
 </html>
