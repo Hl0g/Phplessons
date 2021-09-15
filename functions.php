@@ -48,7 +48,7 @@ function validate ($login,$password){
 		$output.=('the password does not meet the requirements!<br>');
 		$trigger = false;
 	}
-	if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{5,12}$/', $login)) {  
+	if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{3,12}$/', $login)) {  
 		$output.=('the login does not meet the requirements!<br>');
 		$trigger = false;
 	}
